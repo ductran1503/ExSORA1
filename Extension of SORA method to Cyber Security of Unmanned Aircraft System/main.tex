@@ -27,7 +27,7 @@
 
 
 \title{\LARGE \bf
-Toward Cybersecurity of UAS operation under Specific category
+Toward Cybersecurity of UAS operations under ``Specific" category
 }
 
 \author{Trung Duc Tran$^{1}$$^{2}$, Jean-Marc Thiriet$^{1}$, Nicolas Marchand$^{1}$, Amin El Mrabti$^{2}$% <-this % stops a space
@@ -47,7 +47,7 @@ Toward Cybersecurity of UAS operation under Specific category
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{abstract}
- The Specific Operation Risk Assessment (SORA) is a risk assessment methodology developed by Joint Authorities for Rulemaking on Unmanned Aircraft System (JARUS). This methodology is endorsed by European Union Aviation Safety Agency (EASA) as an acceptable means to fulfill the requirements of EU regulation related to UAS operations under Specific category. The original SORA methodology focus on only Safety risk scenarios, which relate to unintentional threats and the harms to people's life. In this paper, we introduce our solution to extend the methodology toward cybersecurity aspects. The extended methodology concern the risk scenario relating to intentional digital threats and some other harms (e.g privacy violation, damage to critical infrastructure). A part of this solution is developed and is presented in this paper.  
+ Nowadays, the increasing number of UAS operations raises the public concerns on cybersecurity issues. Therefore, it requires a methodology to address these issues during the UAS development. The Specific Operation Risk Assessment (SORA) is a risk assessment methodology developed by Joint Authorities for Rulemaking on Unmanned Aircraft System (JARUS). This methodology is endorsed by European Union Aviation Safety Agency (EASA) as an acceptable means to fulfill the requirements of EU regulation related to UAS operations under Specific category. The original SORA methodology focus on Safety risk scenarios only, which relate to unintentional threats and the harms to people's life. In this paper, we introduce our solution to extend the methodology toward cybersecurity aspects. The extended methodology concerns risk scenarios relating to intentional digital threats and some other harms (e.g privacy violation, damage to critical infrastructure). A part of this solution is developed and is presented in this paper.  
 \end{abstract}
 
 
@@ -69,35 +69,35 @@ To deal with the progressive increase in the number of UAS operations, the Europ
 
 \subsection {Related works and contribution}
 
-Regarding UAS applications, there are a lot of researches on cybersecurity breaches from the two sides: attack and defense. Vattapparamban et al. experimented with several hijack attacks against small UASs by exploiting the vulnerabilities of their WiFi communication \cite{vattapparamban_drones_2016}. A framework to defend against these kind of attacks is proposed by Hooper et al. \cite{7795496}. Heiges et al. \cite{heiges_how_nodate} experimented with an injection attack on an autopilot to reroute an Unmanned Aircraft (UA). To defend against this attack, the authors developed a solution that compares the change on the autopilot with the pilot inputs. Javaid et al. simulated GPS Jamming and GPS Spoofing attacks by using UAVSim \cite{10.1177/0037549716685874}. Against these attacks, several countermeasures were proposed such as the Bayesian network-based method \cite{7991465}, the machine learning-based method \cite{8081999,8651804}, the vision-based method \cite{8288496}. Davidson et al. argued that the optical flow sensors used for navigation represent a vector for adversarial control and demonstrated this argument with a real UAV \cite{198490}. The researches in individual security breaches are important because they help us anticipate the potential attacks against UAS operations and possible countermeasures. However, it is still a lack of researches on the decision-making process which helps to analyze globally the cybersecurity environment and balancing the operation performance vs. the economic cost of implementing countermeasures. 
+Regarding UAS applications, there are a lot of researches on cybersecurity breaches from the two sides: attack and defense. Vattapparamban et al. experimented with several hijack attacks against small UASs by exploiting the vulnerabilities of their WiFi communication \cite{vattapparamban_drones_2016}. A framework to defend against these kinds of attacks is proposed by Hooper et al. \cite{7795496}. Heiges et al. \cite{heiges_how_nodate} experimented with an injection attack on an autopilot to reroute an Unmanned Aircraft (UA). To defend against this attack, the authors developed a solution that compares the change on the autopilot with the pilot inputs. Javaid et al. simulated GPS Jamming and GPS Spoofing attacks by using UAVSim \cite{10.1177/0037549716685874}. Against these attacks, several countermeasures were proposed such as the Bayesian network-based method \cite{7991465}, the machine learning-based method \cite{8081999,8651804}, the vision-based method \cite{8288496}. Davidson et al. argued that the optical flow sensors used for navigation represent a vector for adversarial control and demonstrated this argument with a real UAV \cite{198490}. The researches in individual security breaches are important because they help us anticipate the potential attacks against UAS operations and possible countermeasures. However, it is still a lack of researches on the decision-making process which helps to analyze globally the cybersecurity environment and balancing the operation performance vs. the economic cost of implementing countermeasures. 
 
-In the other industrial domains, there are standards and methodologies which provide different guidance for risk assessment related to cybersecurity. In the information system domain, \textbf{ISO 27005} standard was first considered as guidance to information security but it does not provide a specific risk assessment method\cite{iso27005}. One of the ISO27005-based methodologies is \textbf{Method for Harmonized Analysis of Risk (MEHARI)}\cite{MEHARIOverview}, which provides different tools to audit the information security of an organization and a database of possible countermeasure. For Industrial Automation and Control Systems (IACS), \textbf {IEC62443} standard guides on assessing risks and provides a list of requirements that need to meet during designing and implementing a secured system \cite{CSIAC-2016}. In the automobile domain, \textbf{E-safety Vehicle Intrusion proTected Applications (EVITA)}\cite{article-EVITA_2007} \cite{evita23} is a methodology dedicated to the cybersecurity of an on-board network, which has many common points with UAS (sensors, gps, actuators, control system etc.). This methodology aims to analyze cybersecurity breaches, define requirements and verify cyber-security solutions. In aeronautic domain, \textbf{DO326/ED203} is the first guidance for the airworthiness security process. This standard adds a new cybersecurity brick on the current manned aircraft development process, which traditionally focuses on the safety \cite{ED202}. DO326/ED203 and manned aircraft development process are considered too costly for most of UAS operations, especially under the Specific category \cite{A-NPA2015}. 
+In the other industrial domains, there are standards and methodologies which provide different guidances for risk assessment related to cybersecurity. In the information system domain, \textbf{ISO 27005} standard was first considered as guidance to information security but it does not provide a specific risk assessment method\cite{iso27005}. One of the ISO27005-based methodologies is \textbf{Method for Harmonized Analysis of Risk (MEHARI)}\cite{MEHARIOverview}, which provides different tools to audit the information security of an organization and a database of possible countermeasure. For Industrial Automation and Control Systems (IACS), \textbf {IEC62443} standard guides on assessing risks and provides a list of requirements that need to meet during designing and implementing a secured system \cite{CSIAC-2016}. In the automobile domain, \textbf{E-safety Vehicle Intrusion proTected Applications (EVITA)}\cite{article-EVITA_2007} \cite{evita23} is a methodology dedicated to the cybersecurity of an on-board network, which has many common points with UAS (sensors, gps, actuators, control system etc.). This methodology aims to analyze cybersecurity breaches, define requirements and verify cyber-security solutions. In the aeronautic domain, \textbf{DO326/ED203} is the first guidance for the airworthiness security process. This standard adds a new cybersecurity brick on the current manned aircraft development process, which traditionally focuses on the safety \cite{ED202}. DO326/ED203 and manned aircraft development process are considered too costly for most of UAS operations, especially under the Specific category \cite{A-NPA2015}. 
 
-Besides the methodologies and standards widely accepted in the industry, there are a lot of researches proposing the new risk assessment methodologies related to cybersecurity. Some of such methodologies are extended versions of existing risk assessment methodologies for safety \cite{bondavalli_security_2014, abdo:tel-01829574, jonsson_integrated_1998, 7490632, kriaa_joint_nodate}. Schmittner developed the FMVEA (Failure Mode, Vulnerabilities  and  Effects Analysis) method  based on the traditional FMEA (Failure  Mode  and  Effect  Analysis)\cite{bondavalli_security_2014}. The authors extended the original risk model to covers new incidents original from attacks and introduced new parameters to evaluate the attack likelihoods. Abdo et al.\cite{abdo:tel-01829574} treated the cybersecurity and safety issues for critical infrastructures in the same risk assessment process. The authors developed an approach to represent exhaustively risk scenarios and evaluate the likelihoods based on the Bow-tie model, which is commonly used in safety methodology (for example in the SORA methodology \cite{dlr121660}). Xu et al. \cite{7490632} proposed a methodology to identify and analyze systematically cybersecurity risks based on Fault tree analysis and Hazard analysis methods commonly used for safety in the aerospace industry.
+Besides the methodologies and standards widely accepted in the industry, there are a lot of researches proposing the new risk assessment methodologies related to cybersecurity. Some of such methodologies are extended versions of existing risk assessment methodologies for safety \cite{bondavalli_security_2014, abdo:tel-01829574, jonsson_integrated_1998, 7490632, kriaa_joint_nodate}. Schmittner developed the FMVEA (Failure Mode, Vulnerabilities  and  Effects Analysis) method  based on the traditional FMEA (Failure  Mode  and  Effect  Analysis)\cite{bondavalli_security_2014}. The authors extended the original risk model to cover new incidents original from attacks and introduced new parameters to evaluate the attack likelihoods. Abdo et al.\cite{abdo:tel-01829574} treated the cybersecurity and safety issues for critical infrastructures in the same risk assessment process. The authors developed an approach to represent exhaustively risk scenarios and evaluate the likelihoods based on the Bow-tie model, which is commonly used in safety methodology (for example in the SORA methodology \cite{dlr121660}). Xu et al. \cite{7490632} proposed a methodology to identify and analyze systematically cybersecurity risks based on Fault tree analysis and Hazard analysis methods commonly used for safety in the aerospace industry.
 
 To the best of our knowledge,  the most common risk assessment methodology in the UAS domain is \textbf{Specific Operation Risk Assessment (SORA)}, which is endorsed by European Aviation Safety Agency (EASA) as an acceptable means to fulfill the requirements of the EU regulations related to UAS. However, at this moment, the methodology focuses on only the safety aspect and ignores the cybersecurity aspect\cite{SORAV1}. Therefore, we introduce a solution to extend the SORA methodology to take into account the cybersecurity aspect of UAS operation under the Specific category. The expected result of the application of the extended method is a list of cybersecurity and safety objectives which need to be addressed at the beginning UAS development process. 
 
-The remaining of this document is organized as follows. The concept of the SORA methodology is then given in Section \ref{sec:concept}. A solution to extend the methodology is given in Section \ref{sec:frame}. An extension of SORA methodology with a new harm category is given in Section \ref{sec:newharm}. We conclude our works and present our perspective on the future works in Section \ref{sec:con}
+The remaining of this document is organized as follows. The concept of the SORA methodology is then given in Section \ref{sec:concept}. A solution to extend the methodology to cybersecurity issues is given in Section \ref{sec:frame}. An extension of SORA methodology with a new harm category is given in Section \ref{sec:newharm}. We conclude our works and present our perspective on the future works in Section \ref{sec:con}
 
 
 \section{General concept of the SORA methodology} \label{sec:concept}
 
- Under the Specific category, to gain flight permission, operators (who deploy and control the drone) have to demonstrate the safety of operation to aviation authorities by carrying out a risk assessment. One acceptable means to carry out this risk assessment is the  Specific Operations Risk Assessment (SORA) methodology proposed by a group of experts from the National Aviation Authorities - Joint Authorities for Rulemaking on Unmanned Systems (JARUS) \cite{EASA_AMC, EASA_SORA}. SORA is a holistic and operation-centric methodology \cite{dlr121660}.  It focuses on analyzing qualitatively consequences of safety issues related to an intended operation and then to determine the safety objectives (in training, system performance, organization, development), which need to be met to gain a  approval. In the point of view of manufacturers (who design and develop UAS), the SORA methodology could be used to determine safety feature that their designs need to reach to targeted operations under Specific category. In this section, we explain the general concept of the methodology including two parts: (1) risk model risk scenarios under consideration, (2) assessment process.
+ Under the Specific category, to gain flight permission, operators (who deploy and control the drone) have to demonstrate the safety of operation to aviation authorities by carrying out a risk assessment. One acceptable means to carry out this risk assessment is the  Specific Operations Risk Assessment (SORA) methodology proposed by a group of experts from the National Aviation Authorities - Joint Authorities for Rulemaking on Unmanned Systems (JARUS) \cite{EASA_AMC, EASA_SORA}. SORA is a holistic and operation-centric methodology \cite{dlr121660}.  It focuses on analyzing qualitatively consequences of safety issues related to an intended operation and then to determine the safety objectives (in training, system performance, organization, development), which need to be met to gain an  approval. From the point of view of manufacturers (who design and develop UAS), the SORA methodology could be used to determine safety feature that their designs need to reach to targeted operations under Specific category. In this section, we explain the general concept of the methodology including two parts: (1) risk model risk scenarios under consideration, (2) assessment process.
 
 \subsection{Risk model}
 
- At this moment, the SORA methodology basically considers only risks of harms to a person's life: ``fatal injuries to third parties on ground", ``fatal injuries to third parties in air". To illustrate the risk scenarios related to these harms (or how these harms could happen), the methodology provides a risk model as shown in Figure \ref{table: riskscenario}. This risk model includes three grand segments: Harms, Hazard, Threats. The harms are in the right part of the model. The direct causes of these harms is a generic hazard ``UAS operation out of control" shown in the center of the model. This hazard is defined as an operation being conducted outside of the operator’s intention (e.g the aircraft flies outside of visual observation of pilot in a Visual Line Of Sight operation). The hazard could be caused by several threats which are grouped into categories in the left part of the model. Because SORA methodology considers only the safety aspect but not the security aspect, only unintentional threats are represented in the model. However, according to the authors, this model could be extended to cover more risk scenarios \cite{SORAV1}.
+ At this moment, the SORA methodology basically considers only risks of harms to a person's life: ``fatal injuries to third parties on ground", ``fatal injuries to third parties in air". To illustrate the risk scenarios related to these harms (or how these harms could happen), the methodology provides a risk model as shown in Figure \ref{table: riskscenario}. This risk model includes three major segments: Harms, Hazard, Threats. The harms are in the right part of the model. The direct causes of these harms is a generic hazard ``UAS operation out of control" shown in the center of the model. This hazard is defined as an operation being conducted outside of the operator’s intention (e.g the aircraft flies outside of visual observation of the pilot in a Visual Line Of Sight operation). The hazard could be caused by several threats which are grouped into categories in the left part of the model. Because SORA methodology considers only the safety aspect but not the security aspect, only unintentional threats are represented in the model. However, according to the authors, this model could be extended to cover more risk scenarios \cite{SORAV1}.
  
  To mitigate the above risks, several means of mitigation should be applied. There are two types of means of mitigation: 
 \begin{itemize}
 	\item Harm barrier, which mitigates the likelihood of harms after an occurrence of hazard (e.g. parachute, plan to save the victim on the ground). The harm barriers are pre-defined by operators/manufactures and are analyzed during risk assessment. 
-	\item Threat barrier, which mitigates the likelihood of hazard ``UAS operation out of control" caused by considered threats. For each category of threat, different threat barriers will be determined at the end of risk assessment under the form of Operation Safety Objective (OSO). Each OSO is detailed in three levels of robustness (Low, Medium, High). An example of OSO is that the UAS is developed to authority recognized design standards. At low robustness level  of this OSO, the applicant should only declare the required standards are achieved. Meanwhile at the high robustness level, the applicant has to provide supporting evidence (such as analysis, simulation), which will be valided by a competent third party.  
+	\item Threat barrier, which mitigates the likelihood of hazard ``UAS operation out of control" caused by considered threats. For each category of threat, different threat barriers will be determined at the end of risk assessment under the form of Operation Safety Objective (OSO). Each OSO is detailed in three levels of robustness (Low, Medium, High). An example of OSO is that ``the UAS is developed to authority recognized design standards"\cite{Annex_E_SORA}. At low robustness level  of this OSO, the applicant should only declare the required standards are achieved. Meanwhile at the high robustness level, the applicant has to provide supporting evidence (such as analysis, simulation), which will be valided by a competent third party.  
 \end{itemize}
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=3.3 in]{image/Bow-tie_model.pdf}
-	\caption{Risk model \textcolor{red}{A refaire - Nico}}
+	\caption{Risk model de the SORA methodology \textcolor{red}{A refaire - Nico}}
 	\label{table: riskscenario}
 \end{figure}  
 
@@ -111,7 +111,7 @@ Traditionally, the risk assessment process requires to analyze two parameters of
  \begin{figure}[!ht]
  	\centering
  	\includegraphics[width=3.4 in]{image/likelihood_estimation.pdf}
- 	\caption{Likelihood estimation \cite{SORAV1} \textcolor{red}{A refaire - Nico}}
+ 	\caption{Likelihood of fatal injuries on ground and in air \cite{SORAV1} \textcolor{red}{A refaire - Nico}}
  	\label{figure: likelihood estimation}
  \end{figure}  
  
@@ -132,7 +132,7 @@ The qualitative approach presented above is generally not realistic because of t
    \begin{itemize}
    	\item \textbf{Objective:} Given a UAS operation, we need to maintain the likelihood of each harm at an acceptable level. 
    	\item \textbf{Firstly}, we collect the information on the intended operation (CONOPS description)
-   	\item \textbf{Secondly}, we determine two qualitative factors: Ground Risk Class (GRC) and Air Risk Class (ARC). These factors present qualitatively the likelihoods that the harms occur in case of UAS operation out of control. The GRC and ARC are determined based on the intrinsic characteristics of the operation such as operational area, attitude, weight of UV and the availability of harm barriers. This activity is simplified by using evaluation table provided by the methodology.   
+   	\item \textbf{Secondly}, we determine two qualitative factors: Ground Risk Class (GRC) and Air Risk Class (ARC). These factors present qualitatively the likelihoods that the harms occur in case of UAS operation out of control. The GRC and ARC are determined based on the intrinsic characteristics of the operation such as operational area, attitude, weight of UV and the availability of harm barriers. 
    	  
    	\item \textbf{Thirdly}, we determine two Specific Assurance and Integrity Levels (SAIL) values, which represent the level of confidence that the UAS operation will stay under control. One SAIL value corresponds to GRC and the other corresponds to ARC \cite{SORAV1}. Then, the higher SAIL value will be chosen as an objective to drive the required safety objectives. In the most recent version of the SORA methodology, these activities are simplified by using Table \ref {tab:SAIL determination}.
    	
@@ -158,7 +158,7 @@ The qualitative approach presented above is generally not realistic because of t
    		\label{tab:SAIL determination}
    	\end{table}
    
-   	\item \textbf{Lastly}, we chose Operation Safety Objective (OSO) and their robustness level corresponding to SAIL level of operation. A list of all possible OSOs is provided in the annex E of SORA \cite{Annex_E_SORA}.
+   	\item \textbf{Lastly}, we chose Operation Safety Objective (OSO) and their robustness level corresponding to the SAIL level of the operation. A list of all possible OSOs is provided in the annex E of SORA \cite{Annex_E_SORA}.
    \end{itemize}
    
   \begin{figure}[!ht]
@@ -180,7 +180,7 @@ Our proposed solution consists of two parts which are called Extension 1 and Ext
 	\label{figure: Extended risk model}
 \end{figure}
 
-In Extension 1, we concern the harm-side of the risk model. Regarding both safety issue and cybersecurity issue of UAS operations, the privacy violations and the damages to infrastructure raise the concern of the public\cite{A-NPA2015, SORAV1,EASA_SORA,7383633}. Therefore, they come to mind as important issues that should be take into account in risk assessment. These new harms is added into the harm-side of the risk model as shown in Figure \ref{figure: Extended risk model}. 
+In Extension 1, we concern the harm-side of the risk model. Regarding both safety issue and cybersecurity issue of UAS operations, the privacy violations and the damages to infrastructure raise the concern of the public\cite{A-NPA2015, SORAV1,EASA_SORA,7383633}. Therefore, they come to mind as important issues that should be taken into account in the risk assessment. These new harms is added into the harm-side of the risk model as shown in Figure \ref{figure: Extended risk model}. 
 \begin{itemize}
     \item \textbf{Privacy violation}: A UAS could have a small size, a long operational range and high performance on-board sensors; so it could intrude itself into private locations and collect information \cite{8490190}. That violates the privacy of the owner.  The privacy violation could be caused by a cyber attack or an error of the system. For example, police-operated UASs may frequently cross private properties on their way to an operational area. Under a cyber attack, the recorded video on the properties could be disclosed and then the privacy of people overflown could be violated.  
     
@@ -191,7 +191,7 @@ In Extension 1, we concern the harm-side of the risk model. Regarding both safet
     
 \end{itemize}
 
-To take into account new harms, the risk assessment process is extended. A new step is added into the process to evaluate the likelihood of new harm in the case of ``UAS operation out of control". Then, the ``SAIL determination" step is modified. The SAIL will be determined based on the combination of the likelihood of these new harms together with the ones of the classical SORA methodology. 
+To take into account new harms , the risk assessment process is extended. A new step is added into the process to evaluate the likelihood of the new harms in the case of ``UAS operation out of control". Then, the ``SAIL determination" step is modified. The SAIL will be determined based on the combination of the likelihood of these new harms together with the ones of the classical SORA methodology. 
 
 In Extension 2, we will concern the threat-side of the risk model. The potential cybersecurity threats need to be identified and grouped in new threat categories. In other words, this calls for a ``completed" taxonomy of cybersecurity threat related to a UAS operation. To illustrate the new scenarios, the new threat categories will be added into the harm-side of the risk model as shown in Figure \ref{figure: Extended risk model}. Corresponding to each new threat category, a list of possible threat barriers will be also established. For a given UAS operation, the new threat barriers are chosen in correspondence with the SAIL value. 
 
@@ -201,19 +201,19 @@ Extension 1 and Extension 2 could be separately developed and then could be inte
 
 Nowadays, the privacy violation is one of the most concerned issues for public acceptance of UAS applications \cite{SORAV1, 7383633, Zhi2019}. Therefore, we consider it as important and address it firstly in our works. However, the general privacy is a very large term. It is difficult to define precisely \cite{Finn2013} and address this term at large, so we focus on only three aspects of this harm: disclosure of personal information; illegal personal surveillance; and intrusion into a private location. The first aspect is illustrated in the works of Li et al. \cite{8685611}. The authors experimented a password-stealing attack by analysing the video captured by the drone.  The second aspect is mentioned in \cite{Johnvilla_privacy, 7883702, 7285023}. In these papers, the authors examined how the surveillance UAS application could impact on the privacy of people on the ground. Moreover, Park et al. \cite{7883702} and Babiceanu et al. \cite{7121232} proposed criteria for judging privacy violation of an UAS operation based on the quality of captured images/videos. The last aspect was addressed by Blank et al. \cite{8328983}. The authors proposed a mechanism to recognize the private spaces during creating flight-paths and make sure that UAs would not fly over these private properties.
 
-For the next, (A) we first analyse the likelihood of the privacy violation to determine the possible factors related to this harm, which could be used for the assessment. Then we propose extensions for the assessment process: (B) a new step named ``Privacy risk class (PRC) determination" to evaluate the likelihood of this harm in case of ``UAS operation out of control" and (C) an extension of the "SAIL determination" step(see Figure \ref{figure: New steps Ex1}). At the end, (D) a case-study is shown. 
+For the next, (A) we first analyse the likelihood of the privacy violation to determine the possible factors related to this harm, which could be used for the assessment. Then we propose extensions for the assessment process: (B) a new step named ``Privacy risk class (PRC) determination" to evaluate the likelihood of this harm in case of ``UAS operation out of control" and (C) an extension of the "SAIL determination" step (see Figure \ref{figure: New steps Ex1}). At the end, (D) a case-study is shown. 
 
   \begin{figure}[!ht]
    	\centering
    	\includegraphics[width= 2.9 in]{image/Extended_Processs_in_module1.pdf}
-   	\caption{New steps in Extension 1 \textcolor{red}{A refaire - Nico}}
+   	\caption{New steps for Extension 1 \textcolor{red}{A refaire - Nico}}
    	\label{figure: New steps Ex1}
    \end{figure}  
    
 \subsection {Likelihood of privacy violation}
 With the privacy harm taken into account, the objective of risk assessment is extended to maintain also that the likelihood of harms to privacy is under certain acceptable level. Similar to the likelihood of harm to person's life, the one of the privacy harm could be decomposed as shown in Figure \ref{figure: new ham likelihood}. The combination of the two components (2) and (3) of this equation represents the likelihood that the privacy of third parties is violated after ''UAS operation out of control". 
 
-For a given operation, the likelihood of person exposed to the UA (insides the sensing range or under the UA) depends on the nature of operation zone (urban zone vs. rural zone) and the type of operation ( Beyond Light of Sight vs. Visual Light of Sight). In urban zones, the population density and the number of private location is higher than in rural zones. Therefore, the likelihood of having a person or a private location exposed to a UA in urban zone is higher than in rural zone. In a Beyond Light Of Sight (BLOS) operation, the operation range of UA is greater than in a Visual Ligh Of Sight (VLOS) operation. Therefore, the number of person under or near to a UA in a BLOS operation is higher than in a VLOS operation. That's why  the likelihood of having a person or a private location exposed to UA is higher in BLOS operation than VLOS operation. 
+For a given operation, the likelihood of a person exposed to the UA (insides the sensing range or under the UA) depends on the nature of operation zone (urban zone vs. rural zone) and the type of operation (Beyond Light of Sight vs. Visual Light of Sight). In urban zones, the population density and the number of private locations is higher than in rural zones. Therefore, the likelihood of having a person or a private location exposed to a UA in an urban zone is higher than in a rural zone. In a Beyond Light Of Sight (BLOS) operation, the operation range of UA is greater than in a Visual Light Of Sight (VLOS) operation. Therefore, the number of persons under or near a UA in a BLOS operation is higher than in a VLOS operation. That's why  the likelihood of having a person or a private location exposed to UA is higher in a BLOS operation than in a VLOS operation. 
 
 \begin{figure}[!ht]
 	\centering
@@ -222,7 +222,7 @@ For a given operation, the likelihood of person exposed to the UA (insides the s
 	\label{figure: new ham likelihood}
 \end{figure}
 
- For a person exposed to the UA, the likelihood of privacy violation depends on the detail level of image collected by on-board camera. For example, if the photo taken by the UAS is at too low resolution, the image of the person is not detailed enough to recognize her/his face so the likelihood of privacy violation is low. The detail level of image could be evaluated by the pixel density - the number of pixels in a captured image presenting a meter on ground. To simplify the calculation we assume that the ground is flat. Therefore, for a UAS operation, the highest value of pixel density is reached when the camera direction is perpendicular to the ground as shown in Figure \ref{flat ground}. In this case, the pixel density is a function of the height above ground of UA (h), the resolution of the camera and the smallest angle of view of camera ($\alpha$) as follows:
+ For a person exposed to the UA, the likelihood of privacy violation depends on the detail level of image collected by on-board camera. For example, if the photo taken by the UAS is at a too low resolution, the image of the person is not detailed enough to recognize her/his face so the likelihood of privacy violation is low. The detail level of image could be evaluated by the pixel density - the number of pixels in a captured image representing a meter on ground. To simplify the calculation we assume that the ground is flat. Therefore, for a UAS operation, the highest value of pixel density is reached when the camera direction is perpendicular to the ground as shown in Figure \ref{flat ground}. In this case, the pixel density is a function of the height above ground of UA (h), the resolution of the camera and the smallest angle of view of camera ($\alpha$) as follows:
  
   \[PD=\frac{\text{number  of  horizontal  pixels}}{2*h*\tan \frac{\alpha}{2}}(pixels/m)\]
 
@@ -250,11 +250,11 @@ Inspect (1000 pixels/m)   & Enable the identity of an individual                
 \label{tab:Image quality classification}
 \end{table}
 
-Base on this analysis, we defines three intrinsic features of a UAS operation to evaluated the likelihood of privacy violation case of ``UAS operation out of control":
+Based on this analysis, we define three intrinsic features of a UAS operation to evaluate the likelihood of privacy violation in case of ``UAS operation out of control":
 \begin{itemize}
     \item Density of operational area: urban zone vs. rural zone
     \item Type of operation: BLOS vs. VLOS
-    \item Level of detail of captured image. 
+    \item Level of detail of the captured image. 
    
 \end{itemize}
 
@@ -268,8 +268,8 @@ Similar to harms introduced in the classical SORA methodology, the likelihood of
 
 In the next parts of the paper, we provide the details of the  PRC determination step and the SAIL determination step.
 
-\subsection {PRC determination step}
-In this step, the likelihood of privacy violation in case of "UAS operation out of control" is represented qualitativement by the PRC value. The intrinsic PRC value is determined based on the intrinsic features of operation as shown in Table \ref{intrinsic PRC}. 
+\subsection {Privacy Risk Class determination step }
+In this step, the likelihood of privacy violation in case of "UAS operation out of control" is represented qualitatively by the Privacy Risk Class (PRC) value. The intrinsic PRC value is determined based on the intrinsic features of operation as shown in Table \ref{intrinsic PRC}. 
 \begin{table}[!ht]
 \centering
 \begin{tabular}{|
@@ -287,9 +287,9 @@ Inspect & C & D & E & F \\ \hline
 \caption{Intrinsic PRC determination \textcolor{red}{A refaire - Nico}}
 \label{intrinsic PRC}
 \end{table}
-Then the final PRC is determined based on the availability of three harm barriers:``Privacy protection filters", ``Restriction on private space" and `Operation-aware announcement to public`". Each means of mitigation helps decreases the intrinsic PRC factor one level. 
+Then the final PRC is determined based on the availability of three harm barriers:``Privacy protection filters", ``Restriction on private space" and `Operation-aware announcement to public`". Each means of mitigation helps decrease the intrinsic PRC factor one level. 
 
-For example, a UA is equipped with a camera of 1920 x 1080 resolution and 10 degree view angle ($\alpha$); flies in BLOS mode and at 150m above ground. In this operation the maximum pixel density is 36 pixels/m and corresponds to Detect level (see Table \ref{tab:Image quality classification}). According to Table \ref{intrinsic PRC}, the intrinsic PRC is at C level. Upon analysis of the privacy issue, the operator decides to upgrade the on-board camera with a digital filter that makes image of a person blur and unable to be recognized. In this case, the final PRC is reduced to B level. 
+For example, a UA is equipped with a camera of 1920 x 1080 resolution and 10 degree view angle ($\alpha$); flies in BLOS mode and at 150m above ground. In this operation the maximum pixel density is 36 pixels/m and corresponds to Detect level (see Table \ref{tab:Image quality classification}). According to Table \ref{intrinsic PRC}, the intrinsic PRC is at the C level. Upon analysis of the privacy issue, the operator decides to upgrade the on-board camera with a digital filter that makes image of a person blur and unable to be recognized. In this case, the final PRC is reduced to the B level. 
 
 \subsection {New SAIL Determination} 
 The last step consists in the new SAIL determination, the process is described as follows:
@@ -317,33 +317,33 @@ The last step consists in the new SAIL determination, the process is described a
  	\caption{3D-SAIL determination \textcolor{red}{A refaire - Nico}}
  	\label{tab:3D-SAIL}
  \end{table}
-For example, a UAS operation is assigned level 6 of GRC, level b of ARC and level B of PRC. By using Table \ref{tab:SAIL determination}, we assign the operation to 2D-SAIL of V. Then  using Table\ref{tab:3D-SAIL}, we define final SAIL value corresponding to the operation is V.
+For example, a UAS operation is assigned level 6 of GRC, level b of ARC and level B of PRC. By using Table \ref{tab:SAIL determination}, we assign the operation to 2D-SAIL of V. Then using Table \ref{tab:3D-SAIL}, we define the final SAIL value corresponding to the operation as V.
 
 \subsection{Case study} \label{sec:cas}
 
 To illustrate the application of the SORA methodology with Extension 1, a simple operation of using drone to make a film is analyzed. 
 
 \subsubsection{CONOPS description}
-The completed CONOPS description is very long (as mentionned on Annex A of the SORA methodology). Therefore, in this step, we collect only some important information to illustrate the Extension 1. It is supposed that a film maker company uses a drone Phantom 4 Pro to make film shots in the center of a city. During the operation, the drone is flied manually by a pilot at 10m above the ground and in VLOS mode. Some important specification of this drone are follows:
+The completed CONOPS description is very long (as mentionned on Annex A of the SORA methodology). Therefore, in this step, we collect only some important information to illustrate the Extension 1. It is supposed that a film maker company uses a drone Phantom 4 Pro to make film shots in the center of a city. During the operation, the drone is flied manually by a pilot at 10m above the ground and in VLOS mode. Some important specifications of this drone are as follows:
 \begin{itemize}
     \item Weight: 1.3 kg
     \item Parachute: yes
     \item Camera resolution: 4896x2592
-    \item Angle of view: 84 degree
+    \item Angle of view: 84 degrees
 \end{itemize}
 
 \subsubsection{GRC determination}
 
-The UA is deployed in the centre of a city, so the probability that people on the ground is struck the UA (in case of out of control) is quite high. This operation is classified as a VLOS operation over a populated environment. In the case of a crash, corresponding to the height and the weight of the UA, the kinetic energy is about 127.4 J. This value is estimated by using a simple approach, in which we assume the drone drops vertically without draft force. Based on the Ground Risk Class table provided in SORA, we assign this operation to GRC of 4. Because the drone is equipped with a parachute, the final GRC is decreased to 3.
+The UA is deployed in the centre of a city, so the probability that people on the ground could be struck by the UA (in case of out of control) is quite high. This operation is classified as a VLOS operation over a populated environment. In the case of a crash, corresponding to the height and the weight of the UA, the kinetic energy is about 127 J. This value is estimated by using a simple approach, in which we assume the drone drops vertically without draft force. Based on the Ground Risk Class table provided in the SORA methodology, this operation is assigned to a GRC of 4. Because the drone is equipped with a parachute, the final GRC is decreased to 3.
 
 \subsubsection{ARC determination}
 
-Because the UAV fly under 500ft (152m) above the ground, in uncontrolled airspace (far from any airports) and over urban area, the operation is assigned to initial ARC of c (The decision table is presented in the document of  the SORA methodology\cite{SORAV2})
+Because the UAV fly under 500ft (152m) above the ground, in uncontrolled airspace (far from any airports) and over urban area, the operation is assigned to an ARC of c (The decision table is presented in the document of  the SORA methodology\cite{SORAV2})
 
 \subsubsection{PRC determination}
-Based on the information on camera specification and attitude of drone, we could calculate the maximun density pixel of the image captured in this operation as follows:
+Based on the information on the camera specifications and the attitude of drone, we could calculate the maximun density pixel of the image captured in this operation as follows:
  \[PD=\frac{4896}{2*10*\tan(42)} = 272 (pixels/m)\]
-So the image detail is  at Identity Level. As the UA fly in VLOS mode and over urban zone, the intrinsic PRC of this operation is assigned to E. Because there are not any means of mitigation in place to prevent privacy violation in case of ``UAS operation out of control", the final PRC is maintained unchanged at E level.
+So the image detail is  at the Identity Level (see Table \ref{tab:Image quality classification}). As the UA flies in VLOS mode and over an urban zone, the intrinsic PRC of this operation is assigned to E. Because there are not any means of mitigation in place to prevent privacy violation in case of ``UAS operation out of control", the final PRC is maintained unchanged at E level.
 \begin{table}[!ht]
     \centering
     \begin{tabular}{|
@@ -364,9 +364,9 @@ So the image detail is  at Identity Level. As the UA fly in VLOS mode and over u
 
 \subsubsection{SAIL determination}
 
-The operation is assigned to ARC of c, GRC of 3, therefore the value SAIL-2D of the operation is IV (as shown in Table \ref{SAIL determination Case-study}).
+The operation is assigned to an ARC of c and a GRC of 3, therefore the SAIL-2D value of the operation is IV (as shown in Table \ref{SAIL determination Case-study}).
 
-With the level IV of SAIL-2D and level E of PRC, the operation is finally assigned to level V of SAIL ( as shown in Table \ref {Final SAIL determination}).
+With the level IV of SAIL-2D and level E of PRC, the operation is finally assigned a SAIL of level V (see Table \ref {Final SAIL determination}).
 \begin{table}[!ht]
 	\centering
 	%\begin{adjustbox}{width= 3.0 in}
@@ -387,10 +387,10 @@ With the level IV of SAIL-2D and level E of PRC, the operation is finally assign
 	\label{Final SAIL determination}
 \end{table}
 
-\textbf{Conclusion:} In this case study, the final SAIL value determined in extended methodology is higher than the one determined in classical methodology (SAIL of V versus SAIL of IV). Therefore, threat barriers are required with higher robustness levels. For example, according to extended methodology, the applicant has to provides tests, simulations to prove that the UAS is developed to authority recognized standards. Meanwhile, according to classical methodology, the applicant has to only declare that the standards are conformed during UAS development.
+\textbf{Conclusion:} In this case study, the final SAIL value determined the presented methodology is higher than the one determined in classical methodology (SAIL of V versus SAIL of IV). Therefore, threat barriers are required with higher robustness levels. For example, according to extended methodology, the applicant has to provides tests, simulations to prove that the UAS development conforms to authority recognized standards. Meanwhile, according to the classical methodology, the applicant has to only declare that the standards are conformed during UAS development.
  
-\section{Contributions and perspectives} \label{sec:con}
-In this paper, first we explain the classical SORA methodology in both the quantitative and qualitative approaches. Base on the concept of the SORA methodology, we introduce our solution to extend it toward cybersecurity. Our solution includes two parts, which are maned Extension 1 and Extension 2. Extension 1 aims to extend the risk scenarios under consideration with the new harms. Extension 2 aims to extend the risk scenarios under consideration with the new cybersecurity threats. At this moment, only Extension 1 is developed. In Extension 1, we consider that the harm to privacy of third party is important and need to be addressed. For this purpose, we add a new step to evaluate the likelihood of this harm into risk assessment process of the SORA methodology and extend the "SAIL determination" step. These extensions are illustrated by a simple cas study.
+\section{Conclusio and perspectives} \label{sec:con}
+In this paper, first we explain the classical SORA methodology in both the quantitative and qualitative approaches. Based on the concept of the SORA methodology, we introduce our solution to extend it toward cybersecurity. Our solution includes two parts, which are maned Extension 1 and Extension 2. Extension 1 aims to extend the risk scenarios under consideration with the new harms. Extension 2 aims to extend the risk scenarios under consideration with the new cybersecurity threats. At this moment, only Extension 1 is developed. In Extension 1, we consider that the harm to privacy of third party is important and need to be addressed. For this purpose, we add a new step to evaluate the likelihood of this harm into risk assessment process of the SORA methodology and extend the "SAIL determination" step. These extensions are illustrated by a simple cas study.
 
 For Extension 1, further works need to be achieved to verify or improve the reasonableness of the decision table, especially Table \ref{tab:3D-SAIL}. Then we start to develop Extension 2 to complete the extension solution.
  
