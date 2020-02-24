@@ -172,7 +172,7 @@ In this section, we explained the original concept of the SORA methodology. It c
 
 \section{Solution to extend the SORA methodology toward cybersecurity}\label{sec:frame}
 
-Our proposed solution consists of two parts which are called Extension 1 and Extension 2. Extension 1 extends the risk scenarios under consideration with new harms; and completes the evaluation of critical level of a given UAS operation. Extension 2 extends the scenarios under consideration with new cyber security threats; and determines the corresponding threat barriers for a given UAS operation. The development of Extension 1 is now in process while the Extension 2 has not been developed yet.
+Our proposed solution consists of two parts which are called Harm Extension and Threat Extension. Harm Extension extends the risk scenarios under consideration with new harms; and completes the evaluation of critical level of a given UAS operation. Threat Extension extends the scenarios under consideration with new cyber security threats; and determines the corresponding threat barriers for a given UAS operation. The development of Harm Extension is now in process while Threat Extension has not been developed yet.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=3.3 in]{image/extended_SORA.pdf}
@@ -180,22 +180,28 @@ Our proposed solution consists of two parts which are called Extension 1 and Ext
 	\label{figure: Extended risk model}
 \end{figure}
 
-In Extension 1, we concern the harm-side of the risk model. Regarding both safety issue and cybersecurity issue of UAS operations, the privacy violations and the damages to infrastructure raise the concern of the public\cite{A-NPA2015, SORAV1,EASA_SORA,7383633}. Therefore, they come to mind as important issues that should be taken into account in the risk assessment. These new harms is added into the harm-side of the risk model as shown in Figure \ref{figure: Extended risk model}. 
+In Harm Extension, we concern the harm-side of the risk model (see \ref{figure: Extended risk model}). At this moment, the classical SORA methodology concerns only the harms to person 's life. However, besides the harms to person's life the public concerns also the other harms \cite{A-NPA2015, SORAV1,EASA_SORA,7383633} such as:  
 \begin{itemize}
     \item \textbf{Privacy violation}: A UAS could have a small size, a long operational range and high performance on-board sensors; so it could intrude itself into private locations and collect information \cite{8490190}. That violates the privacy of the owner.  The privacy violation could be caused by a cyber attack or an error of the system. For example, police-operated UASs may frequently cross private properties on their way to an operational area. Under a cyber attack, the recorded video on the properties could be disclosed and then the privacy of people overflown could be violated.  
     
-    \item \textbf{Physical damages to infrastructure}: It is supposed that in case of ``UAS operation out of control", the unmanned aircraft could fall down on critical infrastructures such as highway, electricity power line, nuclear plant. This harm relates to only some specific operations in which UAs fly near or over critical infrastructures.
+    \item \textbf{Physical damages to infrastructure}: It is supposed that a UA could fall down on critical infrastructures such as highway, electricity power line, nuclear plant. This harm relates to only some specific operations in which UAs fly near or over critical infrastructures.
     
-    \item \textbf{Digital damage to infrastructure}:  For example, an attacker takes over control the UAS and uses it to attack an infrastructure via the connection between the UAS and the infrastructure. This harm relates to only some specific operations in which UASs are connected to infrastructures.    
+    \item \textbf{Digital damage to infrastructure}: It is supposed that a UAS could become a security breach to critical infrastructure. For example, an attacker takes over control the UAS and uses it to attack an infrastructure via the connection between the UAS and the infrastructure.   
     
     
 \end{itemize}
+Therefore, they come to mind as important issues that should be taken into account in the extended methodology. In Harm Extension, our strategy to address the new harms includes 5 steps as follows:
+\begin{enumerate}
+	\item Chose a new harm that needs to be addressed
+	\item Determine factors/characteristics of a UAS operation which have impact on the likelihood of the chosen harm.
+	\item Establish formals or tables to evaluate qualitatively the likelihoods based on the determined factors
+	\item Extend ``SAIL determination'' step to cover the new harm.
+	\item OSO (?) 
+\end{enumerate}
 
-To take into account new harms , the risk assessment process is extended. A new step is added into the process to evaluate the likelihood of the new harms in the case of ``UAS operation out of control". Then, the ``SAIL determination" step is modified. The SAIL will be determined based on the combination of the likelihood of these new harms together with the ones of the classical SORA methodology. 
+In Threat Extension, we will concern the threat-side of the risk model. The potential cybersecurity threats need to be identified and grouped in new threat categories. In other words, this calls for a ``completed" taxonomy of cybersecurity threat related to a UAS operation. To illustrate the new scenarios, the new threat categories will be added into the harm-side of the risk model as shown in Figure \ref{figure: Extended risk model}. Corresponding to each new threat category, a list of possible threat barriers will be also established. For a given UAS operation, the new threat barriers are chosen in correspondence with the SAIL value. 
 
-In Extension 2, we will concern the threat-side of the risk model. The potential cybersecurity threats need to be identified and grouped in new threat categories. In other words, this calls for a ``completed" taxonomy of cybersecurity threat related to a UAS operation. To illustrate the new scenarios, the new threat categories will be added into the harm-side of the risk model as shown in Figure \ref{figure: Extended risk model}. Corresponding to each new threat category, a list of possible threat barriers will be also established. For a given UAS operation, the new threat barriers are chosen in correspondence with the SAIL value. 
-
-Extension 1 and Extension 2 could be separately developed and then could be integrated into one completed methodology. In the remaining of this paper, we focus on developing a part of Extension 1 related to privacy issue. 
+Harm Extension and Threat Extension could be separately developed and then could be integrated into one completed methodology. In the remaining of this paper, we focus on developing a part of Harm Extension related to privacy issue. 
 
 \section{SORA methodology with privacy issue} \label{sec:newharm}
 
@@ -206,7 +212,7 @@ For the next, (A) we first analyse the likelihood of the privacy violation to de
   \begin{figure}[!ht]
    	\centering
    	\includegraphics[width= 2.9 in]{image/Extended_Processs_in_module1.pdf}
-   	\caption{New steps for Extension 1 \textcolor{red}{A refaire - Nico}}
+   	\caption{New steps for Harm Extension \textcolor{red}{A refaire - Nico}}
    	\label{figure: New steps Ex1}
    \end{figure}  
    
@@ -321,10 +327,10 @@ For example, a UAS operation is assigned level 6 of GRC, level b of ARC and leve
 
 \subsection{Case study} \label{sec:cas}
 
-To illustrate the application of the SORA methodology with Extension 1, a simple operation of using drone to make a film is analyzed. 
+To illustrate the application of the SORA methodology with Harm Extension, a simple operation of using drone to make a film is analyzed. 
 
 \subsubsection{CONOPS description}
-The completed CONOPS description is very long (as mentionned on Annex A of the SORA methodology). Therefore, in this step, we collect only some important information to illustrate the Extension 1. It is supposed that a film maker company uses a drone Phantom 4 Pro to make film shots in the center of a city. During the operation, the drone is flied manually by a pilot at 10m above the ground and in VLOS mode. Some important specifications of this drone are as follows:
+The completed CONOPS description is very long (as mentionned on Annex A of the SORA methodology). Therefore, in this step, we collect only some important information to illustrate the Harm Extension. It is supposed that a film maker company uses a drone Phantom 4 Pro to make film shots in the center of a city. During the operation, the drone is flied manually by a pilot at 10m above the ground and in VLOS mode. Some important specifications of this drone are as follows:
 \begin{itemize}
     \item Weight: 1.3 kg
     \item Parachute: yes
@@ -390,9 +396,9 @@ With the level IV of SAIL-2D and level E of PRC, the operation is finally assign
 \textbf{Conclusion:} In this case study, the final SAIL value determined the presented methodology is higher than the one determined in classical methodology (SAIL of V versus SAIL of IV). Therefore, threat barriers are required with higher robustness levels. For example, according to extended methodology, the applicant has to provides tests, simulations to prove that the UAS development conforms to authority recognized standards. Meanwhile, according to the classical methodology, the applicant has to only declare that the standards are conformed during UAS development.
  
 \section{Conclusio and perspectives} \label{sec:con}
-In this paper, first we explain the classical SORA methodology in both the quantitative and qualitative approaches. Based on the concept of the SORA methodology, we introduce our solution to extend it toward cybersecurity. Our solution includes two parts, which are maned Extension 1 and Extension 2. Extension 1 aims to extend the risk scenarios under consideration with the new harms. Extension 2 aims to extend the risk scenarios under consideration with the new cybersecurity threats. At this moment, only Extension 1 is developed. In Extension 1, we consider that the harm to privacy of third party is important and need to be addressed. For this purpose, we add a new step to evaluate the likelihood of this harm into risk assessment process of the SORA methodology and extend the "SAIL determination" step. These extensions are illustrated by a simple cas study.
+In this paper, first we explain the classical SORA methodology in both the quantitative and qualitative approaches. Based on the concept of the SORA methodology, we introduce our solution to extend it toward cybersecurity. Our solution includes two parts, which are maned Harm Extension and Threat Extension. Harm Extension aims to extend the risk scenarios under consideration with the new harms. Threat Extension aims to extend the risk scenarios under consideration with the new cybersecurity threats. At this moment, only Harm Extension is developed. In Harm Extension, we consider that the harm to privacy of third party is important and need to be addressed. For this purpose, we add a new step to evaluate the likelihood of this harm into risk assessment process of the SORA methodology and extend the "SAIL determination" step. These extensions are illustrated by a simple cas study.
 
-For Extension 1, further works need to be achieved to verify or improve the reasonableness of the decision table, especially Table \ref{tab:3D-SAIL}. Then we start to develop Extension 2 to complete the extension solution.
+For Harm Extension, further works need to be achieved to verify or improve the reasonableness of the decision table, especially Table \ref{tab:3D-SAIL}. Then we start to develop Threat Extension to complete the extension solution.
  
 % need a factor for security
 % new harm category (loss of privacy of people on ground via camera) , add new threat and OCSO
