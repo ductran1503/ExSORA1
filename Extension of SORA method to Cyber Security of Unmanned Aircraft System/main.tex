@@ -324,27 +324,28 @@ The last step consists in the new SAIL determination, the process is described a
  	\label{tab:3D-SAIL}
  \end{table}
 
-The 2D-SAIL and 3D-SAIL mentionned above are two different variants. The main different point of two variants is only the way that they are determined. The 2D-SAIL is a combination of GRC and ARC without taking into account PRC (privacy harm). Meanwhile 3D-SAIL takes into account the privacy harm. But both of them represent level of confidence that ``the UAS operation will stay under control" which ranges from I to VI. For each level of confidence require different OSO robustness level. Therefore, with the same value of 3D-SAIL and 2D-SAIL, the OSO robustness levels determined based on 2D-SAIL and 3D-SAIL are similar. This is reason why, in this extension, the step "OSO robustness determination" is maintained unchanged.
+The 2D-SAIL and 3D-SAIL mentionned above are two different variants. The main different point of two variants is only the way that they are determined. The 2D-SAIL is a combination of GRC and ARC without taking into account PRC (privacy harm). Meanwhile 3D-SAIL takes into account the privacy harm. But both of them represent level of confidence that ``the UAS operation will stay under control" which ranges from I to VI. For each level of confidence require different OSO robustness level. Therefore, with the same value of 3D-SAIL and 2D-SAIL, the OSO robustness levels determined based on 2D-SAIL and 3D-SAIL are similar.
 
-For example, a UAS operation is assigned level 6 of GRC, level b of ARC and level B of PRC. By using Table \ref{tab:SAIL determination}, we assign the operation to 2D-SAIL of V. Then using Table \ref{tab:3D-SAIL}, we define the 3D-SAIL value corresponding to the operation as V (similar to 2D-SAIL). In this case, the objective determined by the extended methodology (3D-SAIL) is similar to the ones determined by the classical methodology(2D-SAIL). 
+For example, a UAS operation is assigned level 6 of GRC, level b of ARC and level B of PRC. By using Table \ref{tab:SAIL determination}, we assign the operation to 2D-SAIL of V. Then using Table \ref{tab:3D-SAIL}, we define the 3D-SAIL value corresponding to the operation as V (similar to 2D-SAIL). In this case, the robustness levels of OSO determined by the extended methodology (3D-SAIL) is similar to the ones determined by the classical methodology(2D-SAIL). 
 
+\textcolor{red}{These is the reason why, in Harm Extension, we maintain the step "OSO robustness determination" unchanged. However, at the stage, we consider that the classical list of OSOs are not enough to protect the UAS operation. Because the classical objectives address only the unintentional threat (such as development errors, incorrect behaviors of pilot). Meanwhile the intentional threats are ignored (such as cyber attacks which could cause harms to the privacy and the person's person). Therefore, in the future works - Threat Extension, we plan to extend the list of objectives to take into account new cyber security threats.}  
 
 \subsection{Case study} \label{sec:cas}
 
 To illustrate the application of the SORA methodology with Harm Extension, a simple operation of using drone to make film scenes is analyzed. From the point of view of manufacturer, we will use the presented methodology to pre-defined some objective for drone design/development processes.
 
 \subsubsection{CONOPS description}
-The completed CONOPS description is very long (as mentionned on Annex A of the SORA methodology). Therefore, in this step, we collect only some important information to illustrate the Harm Extension. It is supposed that a film maker company want to use drone to make film shots in the center of a city. During the operation, the drone is flied manually by a pilot at 10m above the ground and in VLOS mode. Some important specifications of this drone are as follows:
+The completed CONOPS description is very long (as mentionned on Annex A of the SORA methodology). Therefore, in this step, we collect only some important information to illustrate the Harm Extension. It is supposed that a film maker company want to use drone to make film shots in the center of a city. During the operation, the drone flies at 13m above the ground and in BLOS mode. Some important specifications of this drone are as follows:
 \begin{itemize}
     \item Weight: 5 kg
     \item Parachute: yes
     \item Camera resolution: 4896x2592
-    \item Angle of view: 84 degrees
+    \item Minimun angle of view: 10 degrees (Zoom-in mode)
 \end{itemize}
 
 \subsubsection{GRC determination}
 
-The UA is deployed in the centre of a city, so the probability that people on the ground could be struck by the UA (in case of out of control) is quite high. This operation is classified as a VLOS operation over a populated environment. In the case of a crash, corresponding to the height and the weight of the UA, the kinetic energy is about 490 J. This value is estimated by using a simple approach, in which we assume the drone drops vertically without draft force. Based on the Ground Risk Class table provided in the SORA methodology, this operation is assigned to a GRC of 4. Because the drone is equipped with a parachute, the final GRC is decreased to 3.
+The UA is deployed in the centre of a city, so the probability that people on the ground could be struck by the UA (in case of out of control) is quite high. This operation is classified as a BLOS operation over a populated environment. In the case of a crash, corresponding to the height and the weight of the UA, the kinetic energy is about 630 J. This value is estimated by using a simple approach, in which we assume the drone drops vertically without draft force. Based on the Ground Risk Class table provided in the SORA methodology, this operation is assigned to a GRC of 6. Because the drone is equipped with a parachute, the final GRC is decreased to 5.
 
 \subsubsection{ARC determination}
 
@@ -352,8 +353,9 @@ Because the UAV fly under 500ft (152m) above the ground, in uncontrolled airspac
 
 \subsubsection{PRC determination}
 Based on the information on the camera specifications and the altitude of the drone, we could calculate the maximun density pixel of the image captured in this operation as follows:
- \[PD=\frac{4896}{2*10*\tan(42)} = 272 (pixels/m)\]
-So the image detail is  at the Identity Level (see Table \ref{tab:Image quality classification}). As the UA flies in VLOS mode and over an urban zone, the intrinsic PRC of this operation is assigned to E. Because there are not any harm barriers in place to prevent privacy violation in case of ``UAS operation out of control", the final PRC is maintained unchanged at E level.
+ \[PD=\frac{4896}{2*13*\tan(10)} = 1067 (pixels/m)\]
+So the image detail is  at the Inspect Level (see Table \ref{tab:Image quality classification}). As the UA flies in BLOS mode and over an urban zone, the intrinsic PRC of this operation is assigned to F. However, the company wants only to capture the video of only the landscape and considers seriously the privacy of people overflown. Therefore, they decides to use a camera which are able to make ``unintentional captured images" of people blur. In this case, this privacy protection filter help decrease the PRC factor from the level F to the level E
+
 \begin{table}[!ht]
     \centering
     \begin{tabular}{|
@@ -397,7 +399,7 @@ With the level IV of SAIL-2D and level E of PRC, the operation is finally assign
 	\label{Final SAIL determination}
 \end{table}
 
-\subsubsection{OSO robustness determination} With the determined SAIL value, we could determine the robusteness level of each OSO followed by the detailed objectives need to be achieved. Because the SORA methodology is designed to support an application for authorization to operate a UAS, some objectives relates to the operators rather than the manufacturer (such as evaluation of weather condition, competence of operator). Therefore in this case study, from point of view of manufacturer, we address only some important OSO as follows:
+\subsubsection{OSO robustness determination} With the final SAIL value (3D-SAIL) of V, we could determine the robusteness level of each OSO followed by the detailed objectives need to be achieved. Because the SORA methodology is designed to support an application for authorization to operate a UAS, some objectives relates to the operators rather than the manufacturer (such as evaluation of weather condition, competence of operator). Therefore in this case study, from point of view of manufacturer, we address only some important OSOs as follows:
 \begin{itemize}
 	\item OSO\#04 at a \textbf{High level} of robustness. It requires that the UAS has to be to standards considered adequate by the competent authority and the manufacturer has to provide the support evidence in form of test or simulation. However, at this moment, there is not any a standard dedicated to UAS development. Alternatively, the manufacturer could apply some safety standards which is widely accepted in aeronautic domain such as DO178C , DO256. Moreover, this objective should be understood by taking account standards related to privacy and data protection.
 	
@@ -405,6 +407,8 @@ With the level IV of SAIL-2D and level E of PRC, the operation is finally assign
 	
 	
 	\item OSO\#18 at \textbf{High level} of robustness. It requires that the UAS is capable to detect and prevent the incorrect pilot input that make the UA excess its flight performance (e.g the pilot let the UA go down to quick.). This protection feature of UA has to be valided by a competent third party. 
+	
+	
 \end{itemize}
 The objectives determined as the ones mentionned above are considered as inputs of a development process of a UAS for intended operation.
 
