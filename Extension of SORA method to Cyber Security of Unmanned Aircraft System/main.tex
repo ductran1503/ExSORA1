@@ -293,9 +293,28 @@ Inspect & C & D & E & F \\ \hline
 \caption{Intrinsic PRC determination \textcolor{red}{A refaire - Nico}}
 \label{intrinsic PRC}
 \end{table}
-Then the final PRC is determined based on the availability of three harm barriers:``Privacy protection filters", ``Restriction on private space" and `Operation-aware announcement to public`". Each means of mitigation helps decrease the intrinsic PRC factor one level. 
 
-For example, a UA is equipped with a camera of 1920 x 1080 resolution and 10 degree view angle ($\alpha$); flies in BLOS mode and at 150m above ground. In this operation the maximum pixel density is 36 pixels/m and corresponds to Detect level (see Table \ref{tab:Image quality classification}). According to Table \ref{intrinsic PRC}, the intrinsic PRC is at the C level. Upon analysis of the privacy issue, the operator decides to upgrade the on-board camera with a digital filter that makes image of a person blur and unable to be recognized. In this case, the final PRC is reduced to the B level. 
+
+Then the determined intrinsic PRC could be corrected by take into account the availability of the harm barriers: ``Privacy protection filters", ``Restriction on private space" and ``Operation-aware announcement to public". Each harm barrier corrects the intrinsic PRC factor as shown in Table \ref{PRC reduction}. A negative number denote an increase of the PRC, a positive number denote a decrease of the PRC.
+
+\begin{table}[]
+	\centering
+	%\resizebox{\textwidth}{!}{%
+		\begin{tabular}{|l|c|c|}
+			\hline
+			\multirow{2}{*}{Harm barrier} & \multicolumn{2}{c|}{PRC correction factor} \\ \cline{2-3} 
+			& No & Yes \\ \hline
+			Privacy protection filters & 0 & -1 \\ \hline
+			Restriction on private space & 0 & -1 \\ \hline
+			Operation-aware announcement to public & 0 & -1 \\ \hline
+		\end{tabular}%
+	%}
+	\caption{PRC correction factor of harm barriers}
+	\label{PRC reduction}
+\end{table}
+ 
+
+For example, a UA is equipped with a camera of 1920 x 1080 resolution and 10 degree view angle ($\alpha$); flies in BLOS mode and at 150m above ground. In this operation the maximum pixel density is 36 pixels/m and corresponds to Detect level (see Table \ref{tab:Image quality classification}). According to Table \ref{intrinsic PRC}, the intrinsic PRC is at the C level. Upon analysis of the privacy issue, the operator decides to upgrade the on-board camera with a digital filter that makes image of a person blur and unable to be recognized. In this case, the PRC is reduced 1 level from C the B level. 
 
 \subsection {New SAIL Determination} 
 The last step consists in the new SAIL determination, the process is described as follows:
@@ -416,7 +435,7 @@ With the level IV of SAIL-2D and level E of PRC, the operation is finally assign
 
 In this case study, the final SAIL value determined by the presented methodology is higher than the one determined in classical methodology (3D-SAIL of V versus 2D-SAIL of IV). In other words, we considered the given operation more critical when we use the extended methodology than when we use the classical methodology. Therefore, the objectives are required to be stratified with higher robustness levels in case of using the extended one. For example, according to extended methodology, the applicant has to provides tests, simulations valided by competent third parties. Meanwhile, according to the classical methodology, the applicant has to only declare that the standards are conformed during UAS development.
 
-However, the objectives corresponding to level V of SAIL could be considered as too strict and costly for the given application, so the manufacture wants to decrease the final SAIL value (3D-SAIL). For this purpose, the manufacturer could blur images of people overflown before storing or sending the video to ground. This solution is a harm barrier to mitigate the likelihood of privacy violation in case that the capture video is disclosed (such as after an unintentional share on public or a successful cyber attack). With this harm barrier, the final PRC of the given operation is decreased from E to D (see the step ``PRC Determination"), then the 3D-SAIL could be reassigned to IV.
+However, the objectives corresponding to level V of SAIL could be considered as too strict and costly for the given application, so the manufacture proposes to decrease the final SAIL value (3D-SAIL). For this purpose, the manufacturer could blur images of people overflown before storing or sending the video to ground. This solution is a harm barrier to mitigate the likelihood of privacy violation in case that the capture video is disclosed (such as after an unintentional share on public or a successful cyber attack). With this harm barrier, the final PRC of the given operation is decreased from E to D (see the step ``PRC Determination"), then the 3D-SAIL could be reassigned to IV.
 
 
  
